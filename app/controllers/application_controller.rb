@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
 
-    @current_user = session[:user_address].nil? ? nil : User.find_by(address: session[:user_address])
+    @current_user = session[:user_address].nil? ?
+                      nil :
+                      User.find_by(address: session[:user_address])
   end
 
   def user_signed_in?

@@ -15,17 +15,16 @@ RSpec.describe User, type: :model do
   end
 
   describe 'eth_address validation' do
-    subject { build(:user) } # Ensure address is unique for uniqueness validation
-
-    it 'adds an error for invalid eth_address' do
-      subject.address = 'invalid_address'
-      subject.validate
-      expect(subject.errors[:address]).to include('is not a valid address')
+    it 'adds an error for invalid address' do
+      user = build :user, address: 'invalid_address'
+      user.validate
+      expect(user.errors[:address]).to include('is not a valid address')
     end
 
-    it 'accepts a valid eth_address' do
-      subject.validate
-      expect(subject.errors[:eth_address]).to be_empty
+    it 'accepts a valid address' do
+      user = build :user
+      user.validate
+      expect(user.errors[:address]).to be_empty
     end
   end
 end

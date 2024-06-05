@@ -9,6 +9,7 @@ AllCops:
     - log/**/*
     - public/**/*
     - tmp/**/*
+    - node_modules/**/*
 
 Layout/EndOfLine:
   EnforcedStyle: lf
