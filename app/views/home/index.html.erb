@@ -1,0 +1,4 @@
+<div class="position-center" data-controller="sign-in">
+  <p>Signed in with: <%= current_user.address %></p>
+  <%= link_to 'Sign out', sessions_path, data: { turbo_method: :delete }, class: 'button' %>
+</div>

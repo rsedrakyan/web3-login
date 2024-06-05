@@ -1,0 +1,13 @@
+<div id="sign-in" class="position-center" data-controller="sign-in">
+  <%= form_for(@form, url: sessions_path, method: :post, data: { 'sign-in-target': 'form' }) do |f| %>
+    <%= show_error_messages(@form.errors.full_messages) %>
+
+    <%= f.hidden_field :address, data: { 'sign-in-target': 'addressInput' } %>
+    <%= f.hidden_field :signature, data: { 'sign-in-target': 'signatureInput' } %>
+    <%= f.hidden_field :message, data: { 'sign-in-target': 'messageInput' } %>
+    <p data-sign-in-target="status">Connect your Wallet</p>
+    <button data-action="click->sign-in#connectMetaMask" data-sign-in-target="metamaskButton">
+      Metamask
+    </button>
+  <% end %>
+</div>

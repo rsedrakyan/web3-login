@@ -1,24 +1,11 @@
-# README
+## Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Use `rvm` or `rbenv` to install ruby version in the `Gemfile`
+* Install PostgreSQL `brew install postgresql`, `apt-get install postgresql`
+* Run `bundle install` to install dependencies
+* Rename `database.yml.example` to `database.yml` and update DB username and password with valid credentials
+* Run `bundle exec rails db:setup`
+* Run `yarn install` to install JS dependencies
+* `bin/dev` to start the application in dev mode
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Screenshots
